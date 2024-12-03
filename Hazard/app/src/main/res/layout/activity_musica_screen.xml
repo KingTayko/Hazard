@@ -13,36 +13,36 @@
         android:id="@+id/txtmusica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:text="Musica"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/txtesporte"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtesporte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:text="Esporte"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/txtcinema"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtcinema"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="Cinema"
-        android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/txtfy"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtesporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="Esporte"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/txtcinema"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -51,10 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
-        android:text="Hazard"
         android:fontFamily="@font/aladin"
+        android:text="Hazard"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -5,33 +5,59 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".telas.ForYou"
+    tools:context=".telas.UserScreen"
     android:background="@color/black">
-
-
-    <TextView
-        android:id="@+id/txtmusica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Musica"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/txtesporte"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtcinema"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:text="Cinema"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/txtfy"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtmusica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="Musica"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/txtesporte"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtesporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="Esporte"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/txtcinema"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtfy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Add/Remove"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- RecyclerView ocupando o espaço restante -->
 
     <ImageView
         android:id="@+id/imglogout"
@@ -44,35 +70,9 @@
         android:contentDescription="Foto do usuário"
         android:src="@drawable/logout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/txtmusica"
         app:layout_constraintTop_toTopOf="@id/txtmusica" />
-
-    <TextView
-        android:id="@+id/txtesporte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:text="Esporte"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/txtcinema"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtfy"
-        android:layout_width="92dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Add/Remove: "
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- RecyclerView ocupando o espaço restante -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

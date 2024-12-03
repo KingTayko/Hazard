@@ -2,6 +2,7 @@ package br.edu.hazard.telas
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -9,19 +10,20 @@ import br.edu.hazard.Post
 import br.edu.hazard.R
 import br.edu.hazard.adapter.ItemListAdapter
 import br.edu.hazard.dao.Item
+import br.edu.hazard.databinding.ActivityCinemaScreenBinding // Corrigir para o binding correto
 import br.edu.hazard.databinding.ActivityEsporteScreenBinding
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 
 class CinemaScreen : AppCompatActivity() {
-    private lateinit var binding: ActivityEsporteScreenBinding
+    private lateinit var binding: ActivityCinemaScreenBinding // Corrigir para o binding correto
     private val itemList = mutableListOf<Item>()
     private lateinit var itemListAdapter: ItemListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityEsporteScreenBinding.inflate(layoutInflater)
+        binding = ActivityCinemaScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val db = FirebaseFirestore.getInstance()
@@ -34,7 +36,7 @@ class CinemaScreen : AppCompatActivity() {
         itemListAdapter = ItemListAdapter(itemList)
         recyclerView.adapter = itemListAdapter
 
-        // Referência à subcoleção Post_cinema
+        // Referência à subcoleção Post_Esporte
         val reference = db.collection("Categorias")
             .document("Cinema")
             .collection("Post_cinema")
@@ -57,8 +59,8 @@ class CinemaScreen : AppCompatActivity() {
                             // Converte o documento para o modelo Item
                             val item = docChange.document.toObject(Item::class.java)
 
-                            // Recupera o username diretamente do documento
-                            val username = docChange.document.getString("username") ?: "Desconhecido"
+                            // Recupera o username diretamente do documento da subcoleção
+                            val username = docChange.document.getString("nome") ?: "Desconhecido"
                             item.username = username  // Adiciona o username ao item
 
                             // Adiciona o item à lista
@@ -78,14 +80,14 @@ class CinemaScreen : AppCompatActivity() {
             }
         }
 
+
         // Direcionando para a página de post
         binding.btnPostar.setOnClickListener {
             val post = Intent(this, Post::class.java)
             startActivity(post)
         }
 
-
-        //redirecionando para as paginas
+        // Redirecionando para outras páginas
         binding.txtcinema.setOnClickListener {
             startActivity(Intent(this, CinemaScreen::class.java))
             finish()
@@ -101,10 +103,8 @@ class CinemaScreen : AppCompatActivity() {
             finish()
         }
 
-
-        binding.imgUser.setOnClickListener{
+        binding.imgUser.setOnClickListener {
             startActivity(Intent(this, UserScreen::class.java))
-
         }
     }
 }

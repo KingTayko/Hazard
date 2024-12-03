@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F0E0E"
+    android:background="@color/black"
     tools:context=".Post">
 
     <!-- CardView para criar a borda arredondada em torno do grupo de componentes -->
