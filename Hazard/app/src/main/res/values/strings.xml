@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hazard</string>
+    <string name="cinema">Cinema</string>
+    <string name="esporte">Esporte</string>
+    <string name="musica">Musica</string>
+    <string name="hazard">Hazard</string>
+</resources>
