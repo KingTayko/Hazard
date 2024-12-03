@@ -84,13 +84,21 @@ class MainActivity : AppCompatActivity() {
         binding.txvSenha.setOnClickListener{
             val email = binding.edtEmail.text.toString()
 
-            Firebase.auth.sendPasswordResetEmail(email)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Log.d(TAG, "Email enviado.")
-                        Toast.makeText(this,"Email enviado",Toast.LENGTH_SHORT).show()
+            if (email.isEmpty()) {
+                Toast.makeText(this, "Por favor, insira seu e-mail", Toast.LENGTH_SHORT).show()
+            } else {
+                Firebase.auth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Log.d(TAG, "E-mail de redefinição enviado.")
+                            Toast.makeText(this, "E-mail enviado com sucesso!", Toast.LENGTH_SHORT).show()
+                        } else {
+                            val error = task.exception?.localizedMessage ?: "Erro desconhecido"
+                            Log.e(TAG, "Erro ao enviar e-mail: $error")
+                            Toast.makeText(this, "Erro ao enviar e-mail: $error", Toast.LENGTH_SHORT).show()
+                        }
                     }
-                }
-        }
+            }
     }
+}
 }
